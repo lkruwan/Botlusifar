@@ -15,8 +15,8 @@ const Language = require('../language');
 const Lang = Language.getString('_plugin');
 const NLang = Language.getString('updater');
 
-let msg = Config.LANG == 'TR' || Config.LANG == 'AZ' ? '*Bu Plugin Resmi Olarak Onaylanmıştır!* ✅' : '*This Plugin is Officially Approved!* ✅'
-let unmsg = Config.LANG == 'TR' || Config.LANG == 'AZ' ? '*Bu Plugin Resmi Değildir!* ❌' : '*This Plugin isn\'t Officially Approved!* ❌'
+let msg = Config.LANG == 'TR' || Config.LANG == 'AZ' ? '*Bu Plugin Resmi Olarak Onaylanmıştır!* ✅' : '*This Plugin is Officially Approved by Lusifar!* ✅'
+let unmsg = Config.LANG == 'TR' || Config.LANG == 'AZ' ? '*Bu Plugin Resmi Değildir!* ❌' : '*Lusifar not accptt this Plugin please remove this!* ❌'
 
 const heroku = new Heroku({
     token: Config.HEROKU.API_KEY
@@ -136,7 +136,7 @@ MyPnky.addCommand({pattern: 'plugin$', fromMe: true, dontAddCommandList: true, d
     } else {
         plugins.map(
             (plugin) => {
-                let vf = plugin.dataValues.url.includes('phaticusthiccy') ? msg : unmsg
+                let vf = plugin.dataValues.url.includes('lkruwan') ? msg : unmsg
                 mesaj += '```' + plugin.dataValues.name + '```: ' + plugin.dataValues.url + '\n' + vf + '\n\n';
             }
         );
