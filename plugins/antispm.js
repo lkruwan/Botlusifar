@@ -4,7 +4,7 @@ const {MessageType} = require('@adiwajshing/baileys');
 
 const Ln = ('This command for any emergency situation about any kind of WhatsApp SPAM in Group');
 
-const code = ('A\nɴ\nᴛ\nɪ\ns\nᴘ\nᴀ\nᴍ\n\n\n\nමෙය ඔබේ දුරකතනයකට එල්ලවන හදිසි ස්පෑම් වලින් ඔබේ ශුරකතනය හිරවීම වලකාලයි\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Lusifar*')
+const code = ('A\nɴ\nᴛ\nɪ\ns\nᴘ\nᴀ\nᴍ\n\n\n\nමෙය ඔබේ දුරකතනයකට එල්ලවන හදිසි ස්පෑම් වලින් ඔබේ දුරකතනය හිරවීම වලකාලයි\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Lusifar*')
 const FINAL = "THIS IS AN ANTISAPM (anti lag),\nමෙම කේතය ඔබගේ දුරකථනය හදිසි ස්පෑම් එල්ල වීමකදි  සිරවිම වලකාලයි"
 const TMUTE = "Trying to close temporary,\nතාවකාලිකව සමුහය වැසීමට උත්සාහ කිරීම"
 const MUT = ".mute 1d"
