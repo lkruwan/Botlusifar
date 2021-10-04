@@ -114,7 +114,7 @@ if (Config.WORKTYPE == 'private') {
                 }
             );
             if (CMD_HELP === '') CMD_HELP += Lang.NOT_FOUND;
-            await message.client.sendMessage(message.jid, 'https://telegra.ph/file/fba7869cccd70aca362cf.mp4', MessageType.audio, {mimetype: 'audio/mp4', ptt:true}, {quoted: message.data})
+         
             await message.client.sendMessage(
                 message.jid, Config.BOTPLKPLK + '\n\n' + CMD_HELP, MessageType.text,{quoted: message.data}
             );
@@ -224,8 +224,7 @@ else if (Config.WORKTYPE == 'public') {
                 }
             );
             if (CMD_HELP === '') CMD_HELP += Lang.NOT_FOUND;
-             await message.client.sendMessage(message.jid, 'https://telegra.ph/file/fba7869cccd70aca362cf.mp4', MessageType.audio, {mimetype: 'audio/mp4', ptt:true}, {quoted: message.data})
-             await message.client.sendMessage(
+                await message.client.sendMessage(
                 message.jid, Config.BOTPLKPLK + '\n\n' + CMD_HELP, MessageType.text,{quoted: message.data}
             );
         }
@@ -353,8 +352,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
                 }
             );
             if (CMD_HELP === '') CMD_HELP += Lang.NOT_FOUND;
-            await message.client.sendMessage(message.jid, 'https://telegra.ph/file/fba7869cccd70aca362cf.mp4', MessageType.audio, {mimetype: 'audio/mp4', ptt:true}, {quoted: message.data})
-            await message.client.sendMessage(
+               await message.client.sendMessage(
                 message.jid, Config.BOTPLKPLK + '\n\n' + CMD_HELP, MessageType.text,{quoted: message.data}
             );
         }
