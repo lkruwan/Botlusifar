@@ -26,7 +26,18 @@
             "required": false,
             "value": "false"
         },
-        "BYE_GIF": {
+        
+         "SONGD": {
+            "description": "Customizable Song Download message",
+            "required": false,
+            "value": "*◦•●◉Downloading Your Song◉●•◦*"
+        },
+        "SONGU": {
+            "description": "Customizable Song upload message",
+            "required": false,
+            "value": "*◦•●◉✿Uploading Your Song✿◉●•◦*"
+        },
+          "BYE_GIF": {
             "description": "Fill here any gif link if you selected gif as WEELCOME",
             "required": false,
             "value": "false"
