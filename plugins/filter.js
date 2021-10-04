@@ -1,3 +1,4 @@
+
 /* Copyright (C) 2020 farhan-dqz.
 re codded by afnan plk
 PINKY
@@ -43,7 +44,7 @@ MyPnk.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC, don
     }
 
     del = await FilterDb.deleteFilter(message.jid, match[0].replace(/['"“]+/g, ''));
-
+    
     if (!del) {
         await message.client.sendMessage(message.jid,Lang.ALREADY_NO_FILTER, MessageType.text)
     } else {
@@ -106,16 +107,16 @@ MyPnk.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC, don
     }
 
     del = await FilterDb.deleteFilter(message.jid, match[0].replace(/['"“]+/g, ''));
-
+    
     if (!del) {
         await message.client.sendMessage(message.jid,Lang.ALREADY_NO_FILTER, MessageType.text)
     } else {
         await message.client.sendMessage(message.jid,Lang.DELETED, MessageType.text)
     }
 }));
-
+    
 if (Config.PLKBGM == 'one') {  
-
+    
 MyPnk.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
         if(Config.BGMFILTER){
         let banned = jid.find( Jid => Jid === message.jid);
@@ -184,7 +185,7 @@ MyPnk.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
     let banned = jid.find( Jid => Jid === message.jid);
     if(banned !== undefined) return
     if (!!message.mention && message.mention[0] == '15862077024@s.whatsapp.net') {
-await message.client.sendMessage(message.jid, fs.readFileSync('./uploads/stickers/adde.webp'), MessageType.sticker, { mimetype: Mimetype.webp, quoted : message.data, ptt: false})
+await message.client.sendMessage(message.jid, fs.readFileSync('./uploads/stickers/mention.webp'), MessageType.sticker, { mimetype: Mimetype.webp, quoted : message.data, ptt: false})
     }
 const array = ['adde','Adde','ade','Ade','Ane','ane','Ado','ado','fuck','Fuck','Bonnone','bonnone','Gm','gm','Gn','gn','Good morning','Good night','mk','Mk','Hi','hi','Na','na','oo','Ooo','Ow','ow']
 array.map( async (a) => {
@@ -207,17 +208,23 @@ filtreler.map(
     var grup = await message.client.groupMetadata(message.jid);
     var sonuc = grup['participants'].map((member) => {     
         if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
-	@@ -217,54 +251,114 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     });
     return sonuc.includes(true);
 }
-
+async function checkImAdmin(message, user = message.client.user.jid) {
+    var grup = await message.client.groupMetadata(message.jid);
+    var sonuc = grup['participants'].map((member) => {     
+        if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
+    });
+    return sonuc.includes(true);
+}
+ 
      MyPnk.addCommand({on: 'text', fromMe: false,onlyGroup: true}, (async (message, match) => {
 
         if(Config.REMOVE){
         let banned = jid.find( Jid => Jid === message.jid);
         if(banned !== undefined) return
-
+        
 const array = afn 
 array.map( async (a) => {
 let pattern = new RegExp(`\\b${a}\\b`, 'g');
