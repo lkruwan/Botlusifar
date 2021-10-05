@@ -57,7 +57,6 @@ let treue = Config.WORKTYPE == 'public' ? false : true
     });
 
     await message.client.sendMessage(message.jid, '*❖  Lusifar youtube search Engine ❖*\n' + 'Result ...' + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ytgot,MessageType.text, {quoted: message.data});
-    return await message.client.deleteMessage(message.jid, {id: searching.key.id, remoteJid: message.jid, fromMe: true})
 }));
 
 Asena.addCommand({pattern: 'yt ?(.*)', fromMe: true,  deleteCommand: false, desc: Lang.YT_DESC}, (async (message, match) => { 
@@ -77,5 +76,4 @@ Asena.addCommand({pattern: 'yt ?(.*)', fromMe: true,  deleteCommand: false, desc
     });
 
     await message.client.sendMessage(message.jid, '*❖  Lusifar youtube search Engine ❖*\n' + 'Result ...' + '\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n' + ytgot,MessageType.text, {quoted: message.data});
-    return await message.client.deleteMessage(message.jid, {id: searching.key.id, remoteJid: message.jid, fromMe: true})
 }));
