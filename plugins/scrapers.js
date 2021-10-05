@@ -7,7 +7,6 @@ const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const translatte = require('translatte');
 const config = require('../config');
 const Pinky = require('../pinky');
-const thumb  = fs.readFileSync('./uploads/thumb/taptodown.jpg')
 const LanguageDetect = require('languagedetect');
 const lngDetector = new LanguageDetect();
 const Heroku = require('heroku-client');
@@ -1192,3 +1191,5 @@ await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk
     }));
     
 }
+
+const thumb  = fs.readFileSync('./uploads/thumb/taptodown.jpg')
