@@ -26,6 +26,27 @@
             "required": false,
             "value": "false"
         },
+        "Z_PINKY_AI": {	
+            "description": "turn on chat back auto reply lusifar (use true to on and fale to off)",	
+            "required": true,	
+            "value": "true"	
+        },	
+        "Z_BOT_NAME": {	
+            "description": "give a name you disire to give your bot (for auto reply lusifar to identify)",	
+            "required": false,	
+            "value": "Lusifar"	
+        },	
+        "Z_DEP_NAME": {	
+            "description": "bot deployer name make it short  (for auto reply Lusifar to identify)",	
+            "required": false,	
+            "value": "plk"	
+        },	
+        "Z_DEP_REPLY": {	
+            "description": "enter the reply message you want when deployer name is typed by users  (for auto reply pink to identify)",	
+            "required": false,	
+            "value": "i know him he is my creator"	
+        },	
+ 
         
          "SONGD": {
             "description": "Customizable Song Download message",
