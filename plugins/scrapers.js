@@ -360,34 +360,7 @@ await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk
 
   }));    
 
-    MyPnky.addCommand({pattern: 'video ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);
-        if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
     
-        var VID = '';
-        try {
-            if (match[1].includes('watch')) {
-                var tsts = match[1].replace('watch?v=', '')
-                var alal = tsts.split('/')[3]
-                VID = alal
-            } else {     
-                VID = match[1].split('/')[3]
-            }
-        } catch {
-            return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
-        }
-        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text);
-
-        var yt = ytdl(VID, {filter: format => format.container === 'mp4' && ['720p', '480p', '360p', '240p', '144p'].map(() => true)});
-        yt.pipe(fs.createWriteStream('./' + VID + '.mp4'));
-
-        yt.on('end', async () => {
-            reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + VID + '.mp4'), MessageType.video, {mimetype: Mimetype.mp4, thumbnail: thumb});
-        });
-    }));
-
 
     MyPnky.addCommand({pattern: 'wiki ?(.*)', fromMe: true, desc: Lang.WIKI_DESC}, (async (message, match) => { 
 
@@ -774,34 +747,6 @@ else if (config.WORKTYPE == 'public') {
             voice: LANG
         });
         await message.client.sendMessage(message.jid,buffer, MessageType.audio, {mimetype: Mimetype.mp4Audio,quoted: message.data,  ptt: true});
-    }));
-
-    MyPnky.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-
-        if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
-        if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
-    
-        var VID = '';
-        try {
-            if (match[1].includes('watch')) {
-                var tsts = match[1].replace('watch?v=', '')
-                var alal = tsts.split('/')[3]
-                VID = alal
-            } else {     
-                VID = match[1].split('/')[3]
-            }
-        } catch {
-            return await message.client.sendMessage(message.jid,Lang.NO_RESULT,MessageType.text);
-        }
-        var reply = await message.client.sendMessage(message.jid,Lang.DOWNLOADING_VIDEO,MessageType.text);
-
-        var yt = ytdl(VID, {filter: format => format.container === 'mp4' && ['720p', '480p', '360p', '240p', '144p'].map(() => true)});
-        yt.pipe(fs.createWriteStream('./' + VID + '.mp4'));
-
-        yt.on('end', async () => {
-            reply = await message.client.sendMessage(message.jid,Lang.UPLOADING_VIDEO,MessageType.text);
-            await message.client.sendMessage(message.jid,fs.readFileSync('./' + VID + '.mp4'), MessageType.video, {quoted: message.data ,mimetype: Mimetype.mp4, thumbnail: thumb});
-        });
     }));
 
     MyPnky.addCommand({pattern: 'wiki ?(.*)', fromMe: false, desc: Lang.WIKI_DESC}, (async (message, match) => { 
