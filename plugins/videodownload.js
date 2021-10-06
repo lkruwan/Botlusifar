@@ -77,7 +77,8 @@ if (config.LANG == 'EN') {
 if (config.WORKTYPE == 'private') {
 
       Neotro.addCommand({pattern: 'video ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-
+      if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
+          
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
         var VID = '';
@@ -113,7 +114,8 @@ else if (config.WORKTYPE == 'public') {
     
 
       Neotro.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-
+      if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
+          
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
         var VID = '';
