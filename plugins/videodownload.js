@@ -77,7 +77,7 @@ if (config.LANG == 'EN') {
 if (config.WORKTYPE == 'private') {
 
       Neotro.addCommand({pattern: 'video ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-      if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
+
           
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
@@ -87,7 +87,14 @@ if (config.WORKTYPE == 'private') {
                 var tsts = match[1].replace('watch?v=', '')
                 var alal = tsts.split('/')[3]
                 VID = alal
-            } else {     
+            }
+            if (match[1].includes('shorts')) {
+                var rmx = match[1].replace('shorts/', '')
+				var rmy = rmx.replace('?feature=share', '')
+                var data = rmy.split('/')[3]
+                VID = data
+            }
+            else {     
                 VID = match[1].split('/')[3]
             }
         } catch {
@@ -114,7 +121,7 @@ else if (config.WORKTYPE == 'public') {
     
 
       Neotro.addCommand({pattern: 'video ?(.*)', fromMe: false, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
-      if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,'shorts වීඩියෝ එවීමට නොහැක.කරුණාකර මෙහි "shorts/ සහ ?feature=share" යන කොටස ඉවත් කරන්න \n උදාහරනයක් ලෙස මෙම ලින්කුවේ (https://youtube.com/shorts/YNiL9hOT1yA?feature=share) එම කොටස් ඉවත් කල විට පහත පරිදි දැක ගත් හැකිය \n https://youtube.com/YNiL9hOT1yA',MessageType.text, {quoted: message.data});
+
           
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text);    
     
@@ -124,7 +131,14 @@ else if (config.WORKTYPE == 'public') {
                 var tsts = match[1].replace('watch?v=', '')
                 var alal = tsts.split('/')[3]
                 VID = alal
-            } else {     
+            }
+            if (match[1].includes('shorts')) {
+                var rmx = match[1].replace('shorts/', '')
+				var rmy = rmx.replace('?feature=share', '')
+                var data = rmy.split('/')[3]
+                VID = data
+            }
+            else {     
                 VID = match[1].split('/')[3]
             }
         } catch {
