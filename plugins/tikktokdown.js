@@ -10,7 +10,7 @@ const capt = " *Lusifar Tiktok Downloader* \n"
 
 if (Config.WORKTYPE == 'public') {
 	
-Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: false, desc: ALang.TIKTOk}, async (message, match) => {
+Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: false, desc: "downloading tik tok videos"}, async (message, match) => {
 
     const link = match[1]
 
