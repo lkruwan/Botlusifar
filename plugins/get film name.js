@@ -12,7 +12,7 @@ const Lang = Language.getString('weather');
 if (config.WORKTYPE == 'private') {
 
 
-Julie.addCommand({pattern: 'gtfilm ?(.*)', fromMe: true, desc: Lang.HMOD , dontAddCommandList: false }, async (message, match) => {
+Julie.addCommand({pattern: 'gtfilm ?(.*)', fromMe: true, desc: "give link to download films" , dontAddCommandList: false }, async (message, match) => {
 	const {data} = await axios(`https://api.zeks.me/api/film/2?apikey=1hroZ3ju94h0PBjCNKsfhYaSuLs&q=${match[1]}`)
 	const result = data.result[0]
 	const status = data
@@ -29,7 +29,7 @@ Julie.addCommand({pattern: 'gtfilm ?(.*)', fromMe: true, desc: Lang.HMOD , dontA
 if (config.WORKTYPE == 'public') {
 
 
-Julie.addCommand({pattern: 'gtfilm ?(.*)', fromMe: false, desc: Lang.HMOD , dontAddCommandList: false }, async (message, match) => {
+Julie.addCommand({pattern: 'gtfilm ?(.*)', fromMe: false, desc: "give link to download films"  , dontAddCommandList: false }, async (message, match) => {
 	const {data} = await axios(`https://api.zeks.me/api/film/2?apikey=1hroZ3ju94h0PBjCNKsfhYaSuLs&q=${match[1]}`)
 	const result = data.result[0]
 	const status = data
