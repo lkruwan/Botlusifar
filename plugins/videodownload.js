@@ -1,4 +1,5 @@
 
+
 /* Copyright (C) 2021 TENUX-Neotro.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
@@ -19,12 +20,12 @@ const NO_RESULT = "*🌀can't Find Anything...*"
 
 if (Config.WORKTYPE == 'private') {
 
-    amazone.addCommand({ pattern: 'video ?(.*)', fromMe: true, desc: 'Download video from youtube',  deleteCommand: false}, async (message, match) => {
+    amazone.addCommand({ pattern: 'bn ?(.*)', fromMe: true, desc: 'Download video from youtube',  deleteCommand: false}, async (message, match) => {
 
         const link = match[1]
     
-        if (!link) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text)
-        await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text);
+        if (!link) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text,{quoted: message.data})
+        await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text,{quoted: message.data});
         await axios
           .get(`https://api.zeks.xyz/api/ytplaymp4/2?apikey=VI6j4t4wCbwoc6Deh5wgrJL2Kt1&q=${link}`)
           .then(async (response) => {
@@ -34,8 +35,8 @@ if (Config.WORKTYPE == 'private') {
     
             const videoBuffer = await axios.get(link, {responseType: 'arraybuffer'})
     
-            await message.client.sendMessage(message.jid,YTV_UP,MessageType.text);
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {mimetype: Mimetype.mp4, ptt: false})
+            await message.client.sendMessage(message.jid,YTV_UP,MessageType.text ,{quoted: message.data});
+            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {quoted: message.data},{mimetype: Mimetype.mp4, ptt: false})
         })
         .catch(
           async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
@@ -45,12 +46,12 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    amazone.addCommand({ pattern: 'video ?(.*)', fromMe: false, desc: 'Download video from youtube'}, async (message, match) => {
+    amazone.addCommand({ pattern: 'bn ?(.*)', fromMe: false, desc: 'Download video from youtube'}, async (message, match) => {
 
         const link = match[1]
     
         if (!link) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text, {quoted: message.data})
-         await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text)
+         await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text , {quoted: message.data})
         await axios
           .get(`https://api.zeks.xyz/api/ytplaymp4/2?apikey=VI6j4t4wCbwoc6Deh5wgrJL2Kt1&q=${link}`)
           .then(async (response) => {
@@ -61,7 +62,7 @@ else if (Config.WORKTYPE == 'public') {
             const videoBuffer = await axios.get(link, {responseType: 'arraybuffer'})
     
             await message.client.sendMessage(message.jid,YTV_UP,MessageType.text, {quoted: message.data});
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {mimetype: Mimetype.mp4, ptt: false})
+            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video,{quoted: message.data}, {mimetype: Mimetype.mp4, ptt: false})
         })
         .catch(
           async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
