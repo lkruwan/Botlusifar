@@ -20,7 +20,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
 
 if (Config.WORKTYPE == 'private') {
 
-    amazone.addCommand({ pattern: 'bn ?(.*)', fromMe: true, desc: 'Download video from youtube',  deleteCommand: false}, async (message, match) => {
+    amazone.addCommand({ pattern: 'video ?(.*)', fromMe: true, desc: 'Download video from youtube',  deleteCommand: false}, async (message, match) => {
 
         const link = match[1]
     
@@ -46,7 +46,7 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    amazone.addCommand({ pattern: 'bn ?(.*)', fromMe: false, desc: 'Download video from youtube'}, async (message, match) => {
+    amazone.addCommand({ pattern: 'video ?(.*)', fromMe: false, desc: 'Download video from youtube'}, async (message, match) => {
 
         const link = match[1]
     
