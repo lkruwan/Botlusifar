@@ -35,7 +35,7 @@ if (Config.WORKTYPE == 'private') {
             const videoBuffer = await axios.get(link, {responseType: 'arraybuffer'})
     
             await message.client.sendMessage(message.jid,YTV_UP,MessageType.text);
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.document, {mimetype: Mimetype.mp4, ptt: false, thumbnail: thumb})
+            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.document, {mimetype: Mimetype.mp4, ptt: false})
         })
         .catch(
           async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
@@ -61,7 +61,7 @@ else if (Config.WORKTYPE == 'public') {
             const videoBuffer = await axios.get(link, {responseType: 'arraybuffer'})
     
             await message.client.sendMessage(message.jid,YTV_UP,MessageType.text, {quoted: message.data});
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.document, {mimetype: Mimetype.mp4, ptt: false, thumbnail: thumb})
+            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.document, {mimetype: Mimetype.mp4, ptt: false})
         })
         .catch(
           async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
@@ -69,6 +69,3 @@ else if (Config.WORKTYPE == 'public') {
       },
     )
 }
-
-
-const thumb  = fs.readFileSync('./uploads//thumb/taptodown.jpg')
