@@ -219,4 +219,4 @@ else if (config.WORKTYPE == 'public') {
     
 }
 
-const thumb  = fs.readFileSync('./uploads/thumb/taptodown.jpg')
+const thumb  = fs.readFileSync('./uploads/tb/taptodown.jpg')
