@@ -123,7 +123,7 @@ Neotro.addCommand({ pattern: 'afb ?(.*)', fromMe: teenuh , desc: 'mada'}, async 
 
     if (!link) return await message.sendMessage("🧛‍♂️ *Give Vaild FB Link* ")
 
-    await message.sendMessage(message.jid,DOENMSG,MessageType.text)
+    await message.sendMessage(message.jid,DOwNMSG,MessageType.text)
 
 	var url = `https://dapuhy-api.herokuapp.com/api/socialmedia/snapsave?url=${link}&apikey=OSuDZukzPWE49ro`
 				// 
