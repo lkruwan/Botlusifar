@@ -1,6 +1,6 @@
-
 const fs = require('fs');
 if (fs.existsSync('exam.env')) require('dotenv').neon({ path: './exam.env' });
+
 DATABASE_URL = process.env.DATABASE_URL === undefined ? './whatsasena.db' : process.env.DATABASE_URL;
 // BASE : ex
 
@@ -11,7 +11,7 @@ module.exports = {
   OL: '*O/L*',
   AL: '*A/L*',
   
-  // ---Subjects----
+// ---Subjects----
   SIN: '*SINHALA*',
   SCI: '*SCIENCE*',
   MTS: '*MATHEMATICS*',
@@ -27,8 +27,17 @@ module.exports = {
   TAML: '*TAMIL LITERATURE*',
   SINL: '*SINHALA LITERATURE*',
   ENGL: '*ENGLISH LITERATURE*',
+  SLT: '*SECOND LANGUAGE TAMIL*' 
+  JAP: '*JAPAN*'
+  HIN: '*HINDI*'
+  GRO: '*GEOGRAPHY*'
+  FRE: '*FRENCH *'
+  ENTR: '*ENTRENEURSHIP STUDIES*'
+  CIV: '*CIVIC*'
+  BAST: '*BUSINAS ACCOUNTING STUDIES*'
+
   
-  // ---YEARS----
+// ---YEARS----
   Y14: '*2014*',
   Y15: '*2015*',
   Y16: '*2016*',
@@ -38,6 +47,40 @@ module.exports = {
   Y20: '*2019*',
   Y21: '*2021*',
   
+//FILE NAME SUB
+  USIN: 'SINHALA',
+  USCI: 'SCIENCE',
+  UMTS: 'MATHEMATICS',
+  UHIS: 'HISTORY',
+  UENG: 'ENGLISH',
+  UBUD: 'BUDDHISM',
+  UTAM: 'TAMIL',
+  UMUS: 'MUSIC',
+  UDRA: 'DRAMA',
+  UART: 'ART',
+  UDANO: 'DANCING (ORIANTAL)',
+  UDANB: 'DANCING (BHARATH)',
+  UTAML: 'TAMIL LITERATURE',
+  USINL: 'SINHALA LITERATURE',
+  UENGL: 'ENGLISH LITERATURE',
+  USLT: '*SECOND LANGUAGE TAMIL*' 
+  UJAP: '*JAPAN*'
+  UHIN: '*HINDI*'
+  UGRO: '*GEOGRAPHY*'
+  UFRE: '*FRENCH *'
+  UENTR: '*ENTRENEURSHIP STUDIES*'
+  UCIV: '*CIVIC*'
+  UBAST: '*BUSINAS ACCOUNTING STUDIES*'
+
+// ---FILE NAEM YEARS----
+   UY14: '2014',
+  UY15: '2015',
+  UY16: '2016',
+  UY17: '2017',
+  UY18: '2018',
+  UY19: '2019',
+  UY20: '2019',
+  UY21: '2021',
 
 // LINKS
 
@@ -153,6 +196,67 @@ module.exports = {
 
 
 //FIRST BRACKE SUBJECTS 
+
+//tamil first
+//-------- SECOND LANGUAGE TAMIL (P) ---------
+P2015: 'https://drive.google.com/u/1/uc?id=1U8m6objQlsmjXNuyFkQRXZMmF_IonFGN&export=download',
+P2016: 'https://drive.google.com/u/1/uc?id=1Dfd0scdRYhrgIRVHP-0PfxL4OZSrzxmr&export=download',
+P2017: 'https://drive.google.com/u/1/uc?id=1Rec5WVaIH7HiutYRyIXJYDPGnH-fdouA&export=download',
+P2018: 'https://drive.google.com/u/1/uc?id=1PogLK6AVAnoOFAgNo1vtEiVWwJXYViqB&export=download',
+P2019: 'https://drive.google.com/u/1/uc?id=1Q0tTwtzEQGfUNBwkUz90T7I30TVOumes&export=download',
+
+//-------- JAPAN (Q) ---------
+Q2015: 'https://drive.google.com/u/1/uc?id=1ow5i0UTyu93crlncGfQyinnafpMcSDBv&export=download',
+Q2016: 'https://drive.google.com/u/1/uc?id=1C0TKrvgrFk0Y6iaT6JCx3grIiBPIjSxT&export=download',
+Q2017: 'https://drive.google.com/u/1/uc?id=1CjbYkbTaMGaP0Ex-jGS-Kt4hwOU-T-_3&export=download',
+Q2018: 'https://drive.google.com/u/1/uc?id=13D6z7N5BIddR6K5qWwUJhoeyS5WM2RuO&export=download',
+Q2019: 'https://drive.google.com/u/1/uc?id=10FGl80Wm_9oeAq6nBDQuNCZlr8jr5ji_&export=download',
+
+//-------- HINDI (R) ---------
+R2015: 'https://drive.google.com/u/1/uc?id=1Iab09yTnJQNlZZJG2lf_0TfsQbw7Gywc&export=download',
+R2016: 'https://drive.google.com/u/1/uc?id=1RpuTM8Cy_uoOWE4ZfSVNWyr8j0gopN0I&export=download',
+R2017: 'https://drive.google.com/u/1/uc?id=106dFvEDbGaTNTcMtffoi59l9PRahYH2x&export=download',
+R2018: 'https://drive.google.com/u/1/uc?id=1J8crBS7mQMPUohRW_o0UqRK1ex6Btxrb&export=download',
+R2019: 'https://drive.google.com/u/1/uc?id=1AxglJqckWzvTNx2xgYnv8xWDmBfryCB9&export=download',
+
+//-------- GEOGROPHY (S) ---------
+S2015: 'https://drive.google.com/u/1/uc?id=1wcFB9AuORbb0IzZ7tr4cpt0jZasAN8OC&export=download',
+S2016: 'https://drive.google.com/u/1/uc?id=1T3N-8MfzY5GxumZV97Wy13dSsbkQerZV&export=download',
+S2017: 'https://drive.google.com/u/1/uc?id=1BOqE9ev0AkmbJ8VXaaDqCsqoiKH0rYvq&export=download',
+S2018: 'https://drive.google.com/u/1/uc?id=1pn_cmblAJsOeJVfazOW5iIirz8l5zm-O&export=download',
+S2019: 'https://drive.google.com/u/1/uc?id=1dbkWmV7gZdARaJus_7kuzaI77jy5kRtK&export=download',
+ 
+//-------- FRENCH (T) ---------
+T2015: 'https://drive.google.com/u/1/uc?id=1VFKRJ11xc0-IS88Q7b5cBSa4eUWdk3vc&export=download',
+T2016: 'https://drive.google.com/u/1/uc?id=1OrOzUd5IOApSRBp-YHJT4-FLEGKZ7hmf&export=download',
+T2017: 'https://drive.google.com/u/1/uc?id=1c9lrgYkjM_DfJn5KTl9POo7JYTXXuURo&export=download',
+T2018: 'https://drive.google.com/u/1/uc?id=1sEz_JjBx-_ZAKbKvAWFGAda2wzYcMu6R&export=download',
+T2019: 'https://drive.google.com/u/1/uc?id=1mNdQcnCSw70MqS0cNxxUj4OD8AgASNuR&export=download',
+
+//-------- ව්‍යවසායකත්වය (U) ---------
+U2015: 'https://drive.google.com/u/1/uc?id=172p3DUYKlJD48c3kEqqNqyNsyXcw1I9N&export=download',
+U2016: 'https://drive.google.com/u/1/uc?id=1U83NLizjhUy8WGl2AiswxQIVudkIlH1u&export=download',
+U2017: 'https://drive.google.com/u/1/uc?id=1fUt1eYSK-RY6h2J0PimgJx80or3haxCs&export=download',
+U2018: 'https://drive.google.com/u/1/uc?id=1ffScKRcrrxXUyM-1lPoEUXOjEksS4hET&export=download',
+U2019: 'https://drive.google.com/u/1/uc?id=16CmZqw2TK_JlkIPu6md1MEdO6DJrY2Ln&export=download',
+
+//-------- CIVIC (V) ---------
+V2015: 'https://drive.google.com/u/1/uc?id=1GCV2ji7a_uy3qQGn7g4G1v1tgNk1VSQp&export=download',
+V2016: 'https://drive.google.com/u/1/uc?id=1lpTxkgh8Kp3_GW5mbYFLMrid0bW8J-fz&export=download',
+V2017: 'https://drive.google.com/u/1/uc?id=1DgVmcf7x3EKhrZy0uN8wKz0N0_z-JVZw&export=download',
+V2018: 'https://drive.google.com/u/1/uc?id=1n5r4EVVinB_DGzEUgPXsLvtdFaP9LCns&export=download',
+V2019: 'https://drive.google.com/u/1/uc?id=1S9G-CuqPYpfI6DhdNj2zFezpbvCHzyMN&export=download',
+
+//-------- BUSINAS ACCOUNTING STUDIES (W) ---------
+W2015: 'https://drive.google.com/u/1/uc?id=1BiY8ANejKzTvvqhPNz4xJf7vcrTdYo01&export=download',
+W2016: 'https://drive.google.com/u/1/uc?id=1j0HUcBXtiEgK-2n9HlPaAiqnhk88SQ00&export=download',
+W2017: 'https://drive.google.com/u/1/uc?id=1kY97vYGW1pwUCpNgqixQut_iAre5nlje&export=download',
+W2018: 'https://drive.google.com/u/1/uc?id=1mBYriZlkhk16jHhsx9U1-hGD4nYVQO4F&export=download',
+W2019: 'https://drive.google.com/u/1/uc?id=1y8m7pm4Hsh4w5OyPGK0BkI3Du6tQwqB1&export=download',
+
+
+
+
 
 
 };
