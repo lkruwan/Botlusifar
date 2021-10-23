@@ -1,3 +1,4 @@
+
 const amazone = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
@@ -20,7 +21,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             } = response.data.result
             const videoBuffer = await axios.get(thumb, {responseType: 'arraybuffer'})
             
-            const cptt = title + "\n" + published + "\n" +  channel + "\n" + views
+            const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + published + "\n\n" + "*🎞️ Channel name:* " +  channel + "\n\n" + "*👁️Views:* " + views
             
 
             await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
@@ -60,12 +61,12 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             const {
               url,title,thumb,published,channel,views
             } = response.data.result
-            const videoBuffer = await axios.get(thumb, {responseType: 'arraybuffer'})
+            const XCVC = await axios.get(thumb, {responseType: 'arraybuffer'})
             
-            const cptt = title + "\n" + published + "\n" +  channel + "\n" + views
+            const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + published + "\n\n" + "*🎞️ Channel name:* " +  channel + "\n\n" + "*👁️Views:* " + views
             
 
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
+            await message.client.sendMessage(message.jid,Buffer.from(XCVC.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
         })
        
       },
@@ -89,4 +90,4 @@ const NO_RESULT = "*🌀can't Find Anything...*"
           async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
         )
       },
-    )    
+    )  
