@@ -1,7 +1,7 @@
-/* Copyright (C) 2021 TENUX-Neotro.
+/* Copyright (C) 2021 KAVISHKA SANDARUWAN 
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-NEOTROX - TEENUHX
+Lusifar bot
 */
 
 const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
