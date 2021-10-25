@@ -7,7 +7,7 @@ const Language = require('../language');
 const Lang = Language.getString('scrapers');
 
 
-Asena.addCommand({pattern: 'btsabout', fromMe: true, desc: Lang.UP}, (async (message, match) => {
+Asena.addCommand({pattern: 'btsabout', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     var r_text = new Array ();
     
