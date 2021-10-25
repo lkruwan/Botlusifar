@@ -8,7 +8,7 @@ const MyPnk = require('../events');
 const {MessageType, Mimetype } = require('@adiwajshing/baileys');
 const FilterDb = require('./sql/filters');
 const Config = require('../config')
-const Pinky = require('../pinky')
+const Pinky = require('../lusifar')
 const afn = Config.PLKS !== false ? Config.PLKS.split(',') : [];
 const afnp = Pinky.PLKAFN !== false ? Pinky.PLKAFN.split(',') : [];
 const jid = Config.DISBGM !== false ? Config.DISBGM.split(',') : [];
