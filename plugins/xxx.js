@@ -32,7 +32,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + ago + "\n\n" + "*🎞️ Video link:* " +  url + "\n\n" + "*👁️Views:* " + views
             
 
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
+          
         })
        
       },
@@ -75,7 +75,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + ago + "\n\n" + "*🎞️ Video link:* " +  url + "\n\n" + "*👁️Views:* " + views
             
 
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
+
         })
        
       },
