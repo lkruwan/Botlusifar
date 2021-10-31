@@ -18,7 +18,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text , {quoted: message.data});
 
         await axios
-          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp3?query=${linkk}&apikey=hardianto`)
+          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp4?query=${linkk}&apikey=hardianto`)
           .then(async (response) => {
             const {
               channel,title,thumb,published,views,url
@@ -44,7 +44,7 @@ const NO_RESULT = "*🌀can't Find Anything...*"
             await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text , {quoted: message.data});
 
         await axios
-          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp3?query=${linkk}&apikey=hardianto`)
+          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp4?query=${linkk}&apikey=hardianto`)
           .then(async (response) => {
             const {
               channel,title,thumb,published,views,url
