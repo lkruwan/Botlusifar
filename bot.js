@@ -1,7 +1,6 @@
 
-/* Copyright (C) 2020 Yusuf Usta.
-RECODDED BY AFNANPPLK
-Plk  
+/* Copyright (C) 2020 Kavishka Sandaruwan
+RECODDED BY KAVISHKA
 */
 
 const os = require("os");
@@ -67,9 +66,9 @@ async function whatsAsena () {
         }
     });
     
+    
     const conn = new WAConnection();
-    const conn = new WAConnection();
-    conn.version = [2, 2140, 12];
+    conn.version = [2,2140,12];
     const Session = new StringSession();
 
     conn.logger.level = config.DEBUG ? 'debug' : 'warn';
