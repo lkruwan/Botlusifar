@@ -1,65 +1,30 @@
-
-const lusifar = require('../events');
+const amazone = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
-const YTV_DESC = "Downloading songs "
+const Config = require('../config');
 const YT_NEED = "*need word!.*"
 const DWLOAD_VID = "*🎭Downloading Your Video...*"
 const YTV_UP = "*🚀Uploading Your Video...*"
 const NO_RESULT = "*🌀can't Find Anything...*"
+const tk = Config.WORKTYPE == 'public' ? false : true
 
-
-//උස්සන්නද ආවෙ බේසිකයෝ.බොහොම අමාරුවෙන් හැදුවෙ.උස්සන එකා අවජාතකයෙක් කියල හිතාගන්න පුලුවන් පොන්න හැත්ත.හුකන පොන්නයෝ
-    
-    lusifar.addCommand({ pattern: 'video ?(.*)', fromMe: true, deleteCommand: false, desc:'video download',  deleteCommand: false}, async (message, match) => {
+    amazone.addCommand({ pattern: 'video ?(.*)', fromMe: tk, deleteCommand: false, desc: "Download videos",  deleteCommand: false}, async (message, match) => {
         const linkk = match[1]
         if (!linkk) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text)
-            await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text , {quoted: message.data});
-
+        await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text);
         await axios
-          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp4?query=${linkk}&apikey=hardianto`)
+          .get(`https://hardianto-chan.herokuapp.com/api/download/ytdownload?url=${linkk}&apikey=hardianto`)
           .then(async (response) => {
             const {
-              channel,title,thumb,published,views,url
-            } = response.data
-            const videoBuffer = await axios.get(thumb, {responseType: 'arraybuffer'})
-            const VIDGH = await axios.get(url, {responseType: 'arraybuffer'})
-
-            const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + published + "\n\n" + "*🎞️ Channel:* " +  channel + "\n\n" + "*👁️Views:* " + views
-            
-
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
-            await message.client.sendMessage(message.jid,YTV_UP,MessageType.text , {quoted: message.data});
-            await message.client.sendMessage(message.jid,Buffer.from(VIDGH.data), MessageType.video, {quoted: message.data ,mimetype: Mimetype.mp4, ptt: false})
-     
+              link,
+            } = response.data.result
+            const videoBuffer = await axios.get(link, {responseType: 'arraybuffer'})
+            await message.client.sendMessage(message.jid,YTV_UP,MessageType.text);
+            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.video, {mimetype: Mimetype.mp4, ptt: false})
         })
-       
-      },
-    )
-
-    lusifar.addCommand({ pattern: 'video ?(.*)', fromMe: false, deleteCommand: false, desc:'video download',  deleteCommand: false}, async (message, match) => {
-        const linkk = match[1]
-        if (!linkk) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text)
-            await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text , {quoted: message.data});
-
-        await axios
-          .get(`https://hardianto-chan.herokuapp.com/api/yt/playmp4?query=${linkk}&apikey=hardianto`)
-          .then(async (response) => {
-            const {
-              channel,title,thumb,published,views,url
-            } = response.data
-            const videoBuffer = await axios.get(thumb, {responseType: 'arraybuffer'})
-            const VIDGH = await axios.get(url, {responseType: 'arraybuffer'})
-
-            const cptt = "*📑Title:*  " + title + "\n\n" + "*📅Uploded date:* " + published + "\n\n" + "*🎞️ Channel:* " +  channel + "\n\n" + "*👁️Views:* " + views
-            
-
-            await message.client.sendMessage(message.jid,Buffer.from(videoBuffer.data), MessageType.image, {quoted: message.data ,mimetype: Mimetype.jpg, ptt: false,caption: cptt})
-            await message.client.sendMessage(message.jid,YTV_UP,MessageType.text , {quoted: message.data});
-            await message.client.sendMessage(message.jid,Buffer.from(VIDGH.data), MessageType.video, {quoted: message.data ,mimetype: Mimetype.mp4, ptt: false})
-     
-        })
-       
+        .catch(
+          async (err) => await message.client.sendMessage(message.jid,NO_RESULT,MessageType.text, {quoted: message.data}),
+        )
       },
     )
