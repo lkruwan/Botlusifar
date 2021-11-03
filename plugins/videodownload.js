@@ -1,4 +1,4 @@
-
+/*
 const lusifar = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
@@ -93,3 +93,4 @@ const NO_RESULT = "*🌀can't Find Anything...*"
         )
       },
     )  
+*/
