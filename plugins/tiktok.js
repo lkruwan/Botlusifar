@@ -1,4 +1,4 @@
-
+/*
 const Asena = require('../events');
 const {MessageType,mimetype,Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
@@ -69,6 +69,8 @@ Asena.addCommand({ pattern: 'ttv ?(.*)', fromMe: false }, async (message, match)
   
 } /* public close*/
 
+/*
+
 else if (Config.WORKTYPE == 'private') {
   
   Asena.addCommand({ pattern: 'ttv ?(.*)', fromMe: true }, async (message, match) => {
@@ -100,4 +102,9 @@ else if (Config.WORKTYPE == 'private') {
 					
 }) //pattern close
   
-} /* private close*/
+}  
+
+
+
+
+*/
