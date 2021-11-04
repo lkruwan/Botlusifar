@@ -1,5 +1,5 @@
 
-/* Codded by kavishka _ Lusifar
+/* Codded by kavishka - Lusifar
 Unlimited API for Photooxy, Textpro and Instagram scraper.
 Material: https://www.npmjs.com/package/textmaker-thiccy
 Github: https://github.com/phaticusthiccy/TextMaker-Unlimited
